@@ -9,10 +9,15 @@ import telegram from '../Assets/Group.png'
 import ReactPlayer from 'react-player'
 import './Ready.css'
 import VideoRepo from '../Assets/VideoRepo.png'
+import { useEffect } from 'react'
 
 const Ready = () => {
     const { id } = useParams()
+    console.log(id)
     const [video, setVideo] = useState({})
+    useEffect(()=> {
+        setVideo({})
+    }, [])
     return (
         <div>
             <div>
@@ -58,10 +63,10 @@ const Ready = () => {
                     <div className='player-container'>
                         <ReactPlayer
                             className='react-player'
-                            url={video?.url}
+                            url={"https://youtu.be/hLDQ88vAhIs?si=n5cITECPS0GW86ax"}
                             width={"100%"}
                             height={"100%"}
-                            light={<img src={'https://youtu.be/hLDQ88vAhIs?si=n5cITECPS0GW86ax'} alt='Thumbnail' />}
+                            light={<img src={VideoRepo} alt='Thumbnail' />}
                         />
                     </div>
                     <div>
